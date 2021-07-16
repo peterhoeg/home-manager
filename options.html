@@ -23,6 +23,8 @@
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
                 </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/lieer.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/lieer.nix&gt;
+                </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
                 </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/getmail.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/getmail.nix&gt;
                 </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/astroid.nix#blob-path" target="_top">
@@ -201,6 +203,26 @@ disable <code class="literal">readAll</code>.
         false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
                     &lt;home-manager/modules/accounts/email.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.himalaya.enable"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.himalaya.enable"><code class="option">accounts.email.accounts.&lt;name&gt;.himalaya.enable</code></a></span></dt><dd><p>Whether to enable the himalaya mail client for this account
+.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.himalaya.settings"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.himalaya.settings"><code class="option">accounts.email.accounts.&lt;name&gt;.himalaya.settings</code></a></span></dt><dd><p>Extra settings to add to this <span class="command"><strong>himalaya</strong></span>
+account configuration.
+</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  default-page-size = 50;
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.imap"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.imap"><code class="option">accounts.email.accounts.&lt;name&gt;.imap</code></a></span></dt><dd><p>The IMAP configuration to use for this account.
 </p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
@@ -954,6 +976,18 @@ configured to find those symbols.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/debug.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/debug.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.enableNixpkgsReleaseCheck"></a><a class="term" href="options.html#opt-home.enableNixpkgsReleaseCheck"><code class="option">home.enableNixpkgsReleaseCheck</code></a></span></dt><dd><p>Determines whether to check for release version mismatch between Home
+Manager and Nixpkgs. Using mismatched versions is likely to cause errors
+and unexpected behavior. It is therefore highly recommended to use a
+release of Home Manager than corresponds with your chosen release of
+Nixpkgs.
+</p><p>
+When this option is enabled and a mismatch is detected then a warning
+will be printed when the user configuration is being built.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.packages"></a><a class="term" href="options.html#opt-home.packages"><code class="option">home.packages</code></a></span></dt><dd><p>The set of packages to appear in the user environment.</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
@@ -1292,6 +1326,84 @@ undefined for state version ≥ 20.09
         "jane.doe"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-i18n.inputMethod.enabled"></a><a class="term" href="options.html#opt-i18n.inputMethod.enabled"><code class="option">i18n.inputMethod.enabled</code></a></span></dt><dd><p>Select the enabled input method. Input methods is a software to input
+symbols that are not available on standard input devices.
+</p><p>
+Input methods are specially used to input Chinese, Japanese and Korean
+characters.
+</p><p>
+Currently the following input methods are available in Home Manager:
+
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">fcitx</code></span></dt><dd><p>
+    A customizable lightweight input method
+    extra input engines can be added using
+    <code class="literal">i18n.inputMethod.fcitx.engines</code>.
+  </p></dd><dt><span class="term"><code class="literal">fcitx5</code></span></dt><dd><p>
+    The next generation of fcitx,
+    addons (including engines, dictionaries, skins) can be added using
+    <code class="literal">i18n.inputMethod.fcitx5.addons</code>.
+  </p></dd><dt><span class="term"><code class="literal">nabi</code></span></dt><dd><p>
+    A Korean input method based on XIM. Nabi doesn't support Qt 5.
+  </p></dd><dt><span class="term"><code class="literal">uim</code></span></dt><dd><p>
+    The universal input method, is a library with a XIM bridge.
+    uim mainly support Chinese, Japanese and Korean.
+  </p></dd><dt><span class="term"><code class="literal">hime</code></span></dt><dd><p>An extremely easy-to-use input method framework.</p></dd><dt><span class="term"><code class="literal">kime</code></span></dt><dd><p>A Korean IME.</p></dd></dl></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> null or one of "fcitx", "fcitx5", "nabi", "uim", "hime", "kime"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "fcitx"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/default.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/i18n/input-method/default.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-i18n.inputMethod.fcitx.engines"></a><a class="term" href="options.html#opt-i18n.inputMethod.fcitx.engines"><code class="option">i18n.inputMethod.fcitx.engines</code></a></span></dt><dd><p>Enabled Fcitx engines. Available engines are: <code class="literal">anthy</code>, <code class="literal">chewing</code>, <code class="literal">cloudpinyin</code>, <code class="literal">hangul</code>, <code class="literal">libpinyin</code>, <code class="literal">m17n</code>, <code class="literal">mozc</code>, <code class="literal">rime</code>, <code class="literal">skk</code>, <code class="literal">table-extra</code>, <code class="literal">table-other</code>, <code class="literal">unikey</code>.</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">with pkgs.fcitx-engines; [ mozc hangul ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/i18n/input-method/fcitx.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-i18n.inputMethod.fcitx5.addons"></a><a class="term" href="options.html#opt-i18n.inputMethod.fcitx5.addons"><code class="option">i18n.inputMethod.fcitx5.addons</code></a></span></dt><dd><p>Enabled Fcitx5 addons.
+</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">with pkgs; [ fcitx5-rime ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-i18n.inputMethod.kime.config"></a><a class="term" href="options.html#opt-i18n.inputMethod.kime.config"><code class="option">i18n.inputMethod.kime.config</code></a></span></dt><dd><p>kime configuration. Refer to
+<a class="link" href="https://github.com/Riey/kime/blob/develop/docs/CONFIGURATION.md" target="_top">https://github.com/Riey/kime/blob/develop/docs/CONFIGURATION.md</a>
+for details on supported values.
+</p><p><span class="emphasis"><em>Type:</em></span> YAML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  daemon = {
+    modules = ["Xim" "Indicator"];
+  };
+
+  indicator = {
+    icon_color = "White";
+  };
+
+  engine = {
+    hangul = {
+      layout = "dubeolsik";
+    };
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/kime.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/i18n/input-method/kime.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-i18n.inputMethod.uim.toolbar"></a><a class="term" href="options.html#opt-i18n.inputMethod.uim.toolbar"><code class="option">i18n.inputMethod.uim.toolbar</code></a></span></dt><dd><p>Selected UIM toolbar.
+</p><p><span class="emphasis"><em>Type:</em></span> one of "gtk", "gtk3", "gtk-systray", "gtk3-systray", "qt4"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "gtk"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "gtk-systray"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/uim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/i18n/input-method/uim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-lib"></a><a class="term" href="options.html#opt-lib"><code class="option">lib</code></a></span></dt><dd><p>This option allows modules to define helper functions,
 constants, etc.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute sets</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -2374,13 +2486,6 @@ for options.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/direnv.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.enableNixDirenvIntegration"></a><a class="term" href="options.html#opt-programs.direnv.enableNixDirenvIntegration"><code class="option">programs.direnv.enableNixDirenvIntegration</code></a></span></dt><dd><p>Whether to enable <a class="link" href="https://github.com/nix-community/nix-direnv" target="_top">nix-direnv</a>,
-    a fast, persistent use_nix implementation for direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/direnv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.enableZshIntegration"></a><a class="term" href="options.html#opt-programs.direnv.enableZshIntegration"><code class="option">programs.direnv.enableZshIntegration</code></a></span></dt><dd><p>Whether to enable Zsh integration.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
@@ -2398,6 +2503,19 @@ for the full list of options.
         
         }
     
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/direnv.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enable"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enable"><code class="option">programs.direnv.nix-direnv.enable</code></a></span></dt><dd><p>Whether to enable <a class="link" href="https://github.com/nix-community/nix-direnv" target="_top">nix-direnv</a>,
+    a fast, persistent use_nix implementation for direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/direnv.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enableFlakes"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enableFlakes"><code class="option">programs.direnv.nix-direnv.enableFlakes</code></a></span></dt><dd><p>Whether to enable Flake support in nix-direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/direnv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.stdlib"></a><a class="term" href="options.html#opt-programs.direnv.stdlib"><code class="option">programs.direnv.stdlib</code></a></span></dt><dd><p>Custom stdlib written to
@@ -3211,6 +3329,10 @@ presses the <span class="emphasis"><em>Backspace</em></span> key.
         "ascii-delete"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.boldIsBright"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.boldIsBright"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.boldIsBright</code></a></span></dt><dd><p>Whether bold text is shown in bright colors.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.colors"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.colors"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.colors</code></a></span></dt><dd><p>The terminal colors, null to use system default.</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
@@ -3295,6 +3417,10 @@ presses the <span class="emphasis"><em>Delete</em></span> key.
                     &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.showScrollbar"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.showScrollbar"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.showScrollbar</code></a></span></dt><dd><p>Whether the scroll bar should be visible.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.transparencyPercent"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.transparencyPercent"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.transparencyPercent</code></a></span></dt><dd><p>Background transparency in percent.</p><p><span class="emphasis"><em>Type:</em></span> null or integer between 0 and 100 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.visibleName"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.visibleName"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.visibleName</code></a></span></dt><dd><p>The profile name.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
@@ -3413,6 +3539,29 @@ Note that lists are converted to duplicate keys.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.himalaya.enable"></a><a class="term" href="options.html#opt-programs.himalaya.enable"><code class="option">programs.himalaya.enable</code></a></span></dt><dd><p>Whether to enable himalaya mail client.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.himalaya.package"></a><a class="term" href="options.html#opt-programs.himalaya.package"><code class="option">programs.himalaya.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>himalaya</strong></span> mail client.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.himalaya
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.himalaya.settings"></a><a class="term" href="options.html#opt-programs.himalaya.settings"><code class="option">programs.himalaya.settings</code></a></span></dt><dd><p>Global <span class="command"><strong>himalaya</strong></span> configuration values.
+</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  default-page-size = 50;
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/himalaya.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/himalaya.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.home-manager.enable"></a><a class="term" href="options.html#opt-programs.home-manager.enable"><code class="option">programs.home-manager.enable</code></a></span></dt><dd><p>Whether to enable Home Manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -6003,7 +6152,7 @@ of options.
         
         ]
     
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.obs-linuxbrowser ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/obs-studio.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.obs-studio-plugins.wlrobs ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/obs-studio.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/obs-studio.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.octant.enable"></a><a class="term" href="options.html#opt-programs.octant.enable"><code class="option">programs.octant.enable</code></a></span></dt><dd><p>Whether to enable octant.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -6445,6 +6594,20 @@ a key is bound (via <code class="literal">bindings.default</code> or
         false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/qutebrowser.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/qutebrowser.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.qutebrowser.quickmarks"></a><a class="term" href="options.html#opt-programs.qutebrowser.quickmarks"><code class="option">programs.qutebrowser.quickmarks</code></a></span></dt><dd><p>Quickmarks to add to qutebrowser's <code class="filename">quickmarks</code> file.
+Note that when Home Manager manages your quickmarks, you cannot edit them at runtime.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  nixpkgs = "https://github.com/NixOS/nixpkgs";
+  home-manager = "https://github.com/nix-community/home-manager";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/qutebrowser.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/qutebrowser.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.qutebrowser.searchEngines"></a><a class="term" href="options.html#opt-programs.qutebrowser.searchEngines"><code class="option">programs.qutebrowser.searchEngines</code></a></span></dt><dd><p>Search engines that can be used via the address bar. Maps a search
 engine name (such as <code class="literal">DEFAULT</code>, or
 <code class="literal">ddg</code>) to a URL with a <code class="literal">{}</code>
@@ -6772,6 +6935,15 @@ AUTOTYPE_field='autotype'
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi-pass.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.plugins"></a><a class="term" href="options.html#opt-programs.rofi.plugins"><code class="option">programs.rofi.plugins</code></a></span></dt><dd><p>List of rofi plugins to be installed.
+</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.rofi-calc ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.rowHeight"></a><a class="term" href="options.html#opt-programs.rofi.rowHeight"><code class="option">programs.rofi.rowHeight</code></a></span></dt><dd><p>Row height (in chars)</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -7083,6 +7255,70 @@ CTRL-T keybinding.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/skim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/skim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.enable"></a><a class="term" href="options.html#opt-programs.sm64ex.enable"><code class="option">programs.sm64ex.enable</code></a></span></dt><dd><p>Whether to enable sm64ex.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.package"></a><a class="term" href="options.html#opt-programs.sm64ex.package"><code class="option">programs.sm64ex.package</code></a></span></dt><dd><p>The sm64ex package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        <em class="replaceable"><code>(build of sm64ex-unstable-2020-10-09)</code></em>
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.baserom"></a><a class="term" href="options.html#opt-programs.sm64ex.baserom"><code class="option">programs.sm64ex.baserom</code></a></span></dt><dd><p>The path to the Super Mario 64 baserom to extract assets from.</p><p><span class="emphasis"><em>Type:</em></span> null or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">/home/foo/baserom.us.z64</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.extraCompileFlags"></a><a class="term" href="options.html#opt-programs.sm64ex.extraCompileFlags"><code class="option">programs.sm64ex.extraCompileFlags</code></a></span></dt><dd><p>Extra flags to pass to the compiler. See
+<a class="link" href="https://github.com/sm64pc/sm64ex/wiki/Build-options" target="_top">https://github.com/sm64pc/sm64ex/wiki/Build-options</a>
+for more information.
+</p><p><span class="emphasis"><em>Type:</em></span> null or list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
+  "BETTERCAMERA=1"
+  "NODRAWINGDISTANCE=1"
+];
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.region"></a><a class="term" href="options.html#opt-programs.sm64ex.region"><code class="option">programs.sm64ex.region</code></a></span></dt><dd><p>Your baserom's region. Note that only "us", "eu", and "jp" are supported.
+</p><p><span class="emphasis"><em>Type:</em></span> null or one of "us", "eu", "jp"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        us
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">jp</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sm64ex.settings"></a><a class="term" href="options.html#opt-programs.sm64ex.settings"><code class="option">programs.sm64ex.settings</code></a></span></dt><dd><p>Settings for sm64ex's <code class="filename">~/.local/share/sm64pc/sm64config.txt</code> file.</p><p><span class="emphasis"><em>Type:</em></span> null or attribute set of string or signed integer or boolean or list of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  fullscreen = false;
+  window_x = 0;
+  window_y = 0;
+  window_w = 1920;
+  window_h = 1080;
+  vsync = 1;
+  texture_filtering = 1;
+  master_volume = 127;
+  music_volume = 127;
+  sfx_volume = 127;
+  env_volume = 127;
+  key_a = [ "0026" "1000" "1103" ];
+  key_b = [ "0033" "1002" "1101" ];
+  key_start = [ "0039" "1006" "ffff" ];
+  key_l = [ "0034" "1007" "1104" ];
+  key_r = [ "0036" "100a" "1105" ];
+  key_z = [ "0025" "1009" "1102" ];
+  key_cup = [ "100b" "ffff" "ffff" ];
+  key_cdown = [ "100c" "ffff" "ffff" ];
+  key_cleft = [ "100d" "ffff" "ffff" ];
+  key_cright = [ "100e" "ffff" "ffff" ];
+  key_stickup = [ "0011" "ffff" "ffff" ];
+  key_stickdown = [ "001f" "ffff" "ffff" ];
+  key_stickleft = [ "001e" "ffff" "ffff" ];
+  key_stickright = [ "0020" "ffff" "ffff" ];
+  stick_deadzone = 16;
+  rumble_strength = 10;
+  skip_intro = 1;
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sm64ex.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sm64ex.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.enable"></a><a class="term" href="options.html#opt-programs.ssh.enable"><code class="option">programs.ssh.enable</code></a></span></dt><dd><p>Whether to enable SSH client configuration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -7505,6 +7741,33 @@ Home Manager will attempt to create this directory.
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/taskwarrior.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.enable"></a><a class="term" href="options.html#opt-programs.terminator.enable"><code class="option">programs.terminator.enable</code></a></span></dt><dd><p>Whether to enable terminator, a tiling terminal emulator.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/terminator.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.package"></a><a class="term" href="options.html#opt-programs.terminator.package"><code class="option">programs.terminator.package</code></a></span></dt><dd><p>terminator package to install.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        <em class="replaceable"><code>(build of terminator-2.1.1)</code></em>
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.terminator</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/terminator.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.config"></a><a class="term" href="options.html#opt-programs.terminator.config"><code class="option">programs.terminator.config</code></a></span></dt><dd><p>configuration for terminator.
+</p><p>
+For a list of all possible options refer to the
+<span class="citerefentry"><span class="refentrytitle">terminator_config</span>(5)</span>
+man page.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of anythings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  global_config.borderless = true;
+  profiles.default.background_color = "#002b36";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/terminator.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.termite.enable"></a><a class="term" href="options.html#opt-programs.termite.enable"><code class="option">programs.termite.enable</code></a></span></dt><dd><p>Whether to enable Termite VTE-based terminal.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -8113,7 +8376,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.56.2)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.58.0)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -8397,6 +8660,45 @@ window#waybar {
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waybar.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/waybar.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.xmobar.enable"></a><a class="term" href="options.html#opt-programs.xmobar.enable"><code class="option">programs.xmobar.enable</code></a></span></dt><dd><p>Whether to enable Xmobar, a minimalistic status bar.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/xmobar.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/xmobar.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.xmobar.package"></a><a class="term" href="options.html#opt-programs.xmobar.package"><code class="option">programs.xmobar.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>xmobar</strong></span> binary.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.haskellPackages.xmobar
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/xmobar.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/xmobar.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.xmobar.extraConfig"></a><a class="term" href="options.html#opt-programs.xmobar.extraConfig"><code class="option">programs.xmobar.extraConfig</code></a></span></dt><dd><p>Extra configuration lines to add to
+<code class="filename">$XDG_CONFIG_HOME/xmobar/.xmobarrc</code>.
+See
+<a class="link" href="https://xmobar.org/#configuration" target="_top">https://xmobar.org/#configuration</a>
+for options.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">Config
+  { font        = "Fira Code"
+  , borderColor = "#d0d0d0"
+  , border      = FullB
+  , borderWidth = 3
+  , bgColor     = "#222"
+  , fgColor     = "grey"
+  , position    = TopSize C 99 30
+  , commands    =
+      [ Run Cpu ["-t", "cpu: &lt;fc=#4eb4fa&gt;&lt;bar&gt; &lt;total&gt;%&lt;/fc&gt;"] 10
+      , Run Network "enp3s0" ["-S", "True", "-t", "eth: &lt;fc=#4eb4fa&gt;&lt;rx&gt;&lt;/fc&gt;/&lt;fc=#4eb4fa&gt;&lt;tx&gt;&lt;/fc&gt;"] 10
+      , Run Memory ["-t","mem: &lt;fc=#4eb4fa&gt;&lt;usedbar&gt; &lt;usedratio&gt;%&lt;/fc&gt;"] 10
+      , Run Date "date: &lt;fc=#4eb4fa&gt;%a %d %b %Y %H:%M:%S &lt;/fc&gt;" "date" 10
+      , Run StdinReader
+      ]
+  , sepChar     = "%"
+  , alignSep    = "}{"
+  , template    = "  %StdinReader% | %cpu% | %memory% | %enp3s0%  }{%date%  "
+  }
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/xmobar.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/xmobar.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.z-lua.enable"></a><a class="term" href="options.html#opt-programs.z-lua.enable"><code class="option">programs.z-lua.enable</code></a></span></dt><dd><p>Whether to enable z.lua.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -8531,6 +8833,10 @@ for the full list of options.
 to your system configuration to get completion for system packages (e.g. systemd).
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zsh.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.enableSyntaxHighlighting"></a><a class="term" href="options.html#opt-programs.zsh.enableSyntaxHighlighting"><code class="option">programs.zsh.enableSyntaxHighlighting</code></a></span></dt><dd><p>Enable zsh syntax highlighting</p><p><span class="emphasis"><em>Type:</em></span> unspecified</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zsh.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.enableVteIntegration"></a><a class="term" href="options.html#opt-programs.zsh.enableVteIntegration"><code class="option">programs.zsh.enableVteIntegration</code></a></span></dt><dd><p>Whether to enable integration with terminals using the VTE
@@ -9326,6 +9632,22 @@ percent symbol).
         "pkgs.clipmenu"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/clipmenu.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.devilspie2.enable"></a><a class="term" href="options.html#opt-services.devilspie2.enable"><code class="option">services.devilspie2.enable</code></a></span></dt><dd><p>Whether to enable Devilspie2, a window matching utility, allowing the user to
+perform scripted actions on windows as they are created.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/devilspie2.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/devilspie2.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.devilspie2.config"></a><a class="term" href="options.html#opt-services.devilspie2.config"><code class="option">services.devilspie2.config</code></a></span></dt><dd><p>Content of file placed in the devilspie2 config directory.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+if (get_window_class() == "Gnome-terminal") then
+    make_always_on_top();
+end
+''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/devilspie2.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/devilspie2.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dropbox.enable"></a><a class="term" href="options.html#opt-services.dropbox.enable"><code class="option">services.dropbox.enable</code></a></span></dt><dd><p>Whether to enable Dropbox daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9387,6 +9709,8 @@ percent symbol).
   };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/dunst.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.settings.global.icon_path"></a><a class="term" href="options.html#opt-services.dunst.settings.global.icon_path"><code class="option">services.dunst.settings.global.icon_path</code></a></span></dt><dd><p>Paths where dunst will look for icons.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with ":"</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/dunst.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.waylandDisplay"></a><a class="term" href="options.html#opt-services.dunst.waylandDisplay"><code class="option">services.dunst.waylandDisplay</code></a></span></dt><dd><p>Set the service's <code class="envar">WAYLAND_DISPLAY</code> environment variable.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
@@ -11558,6 +11882,32 @@ If false just the exec scripts are run.
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/xsuspender.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/xsuspender.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.automounts"></a><a class="term" href="options.html#opt-systemd.user.automounts"><code class="option">systemd.user.automounts</code></a></span></dt><dd><p>Definition of systemd per-user automount units. Attributes are
+merged recursively.
+</p><p>
+Note that the attributes follow the capitalization and naming used
+by systemd. More details can be found in
+<span class="citerefentry"><span class="refentrytitle">systemd.automount</span>(5)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> systemd automount unit configuration</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  automount-name = {
+    Unit = {
+      Description = "Example description";
+      Documentation = [ "man:example(1)" "man:example(5)" ];
+    };
+
+    Automount = {
+      …
+    };
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/systemd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.mounts"></a><a class="term" href="options.html#opt-systemd.user.mounts"><code class="option">systemd.user.mounts</code></a></span></dt><dd><p>Definition of systemd per-user mount units. Attributes are
 merged recursively.
 </p><p>
@@ -11904,6 +12254,24 @@ See <a class="link" href="https://i3wm.org/docs/userguide.html#_colors" target="
         background = "#900000"; border = "#2f343a"; text = "#ffffff"; 
         }
     
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.bars._.colors.focusedBackground"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.bars._.colors.focusedBackground"><code class="option">wayland.windowManager.sway.config.bars.*.colors.focusedBackground</code></a></span></dt><dd><p>Background color of the bar on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#000000"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.bars._.colors.focusedSeparator"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.bars._.colors.focusedSeparator"><code class="option">wayland.windowManager.sway.config.bars.*.colors.focusedSeparator</code></a></span></dt><dd><p>Text color to be used for the separator on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#666666"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.bars._.colors.focusedStatusline"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.bars._.colors.focusedStatusline"><code class="option">wayland.windowManager.sway.config.bars.*.colors.focusedStatusline</code></a></span></dt><dd><p>Text color to be used for the statusline on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#ffffff"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.bars._.colors.focusedWorkspace"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.bars._.colors.focusedWorkspace"><code class="option">wayland.windowManager.sway.config.bars.*.colors.focusedWorkspace</code></a></span></dt><dd><p>Border, background and text color for a workspace button when the workspace has focus.
@@ -13004,10 +13372,14 @@ If this and all other xresources options are
 )
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/xresources.nix#blob-path" target="_top">
                     &lt;home-manager/modules/xresources.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xresources.path"></a><a class="term" href="options.html#opt-xresources.path"><code class="option">xresources.path</code></a></span></dt><dd><p>Path where Home Manager should link the <code class="filename">.Xresources</code> file.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "\$HOME/.Xresources"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/xresources.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/xresources.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xresources.properties"></a><a class="term" href="options.html#opt-xresources.properties"><code class="option">xresources.properties</code></a></span></dt><dd><p>X server resources that should be set.
 Booleans are formatted as "true" or "false" respectively.
 List elements are recursively formatted as a string and joined by commas.
-All other values are directly formatted using builtins.toString. 
+All other values are directly formatted using builtins.toString.
 Note, that 2-dimensional lists are not supported and specifying one will throw an exception.
 If this and all other xresources options are
 <code class="code">null</code>, then this feature is disabled and no
@@ -13078,7 +13450,15 @@ not all tray applets or status bars support SNI.
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/xsession.nix#blob-path" target="_top">
                     &lt;home-manager/modules/xsession.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.scriptPath"></a><a class="term" href="options.html#opt-xsession.scriptPath"><code class="option">xsession.scriptPath</code></a></span></dt><dd><p>Path, relative <code class="envar">HOME</code>, where Home Manager
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.profilePath"></a><a class="term" href="options.html#opt-xsession.profilePath"><code class="option">xsession.profilePath</code></a></span></dt><dd><p>Path, relative to <code class="envar">HOME</code>, where Home Manager
+should write the X profile script.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ".xprofile"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        ".xprofile-hm"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/xsession.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/xsession.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.scriptPath"></a><a class="term" href="options.html#opt-xsession.scriptPath"><code class="option">xsession.scriptPath</code></a></span></dt><dd><p>Path, relative to <code class="envar">HOME</code>, where Home Manager
 should write the X session script.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ".xsession"
@@ -13118,17 +13498,17 @@ detrimental to performance in some setups
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.package"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.package"><code class="option">xsession.windowManager.bspwm.package</code></a></span></dt><dd><p>bspwm package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.package"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.package"><code class="option">xsession.windowManager.bspwm.package</code></a></span></dt><dd><p>The bspwm package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         pkgs.bspwm
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.bspwm-unstable</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.extraConfig"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.extraConfig"><code class="option">xsession.windowManager.bspwm.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.extraConfig"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.extraConfig"><code class="option">xsession.windowManager.bspwm.extraConfig</code></a></span></dt><dd><p>Additional shell commands to be run at the end of the config file.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
 bspc subscribe all &gt; ~/bspc-report.log &amp;
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.monitors"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.monitors"><code class="option">xsession.windowManager.bspwm.monitors</code></a></span></dt><dd><p>bspc monitor configurations</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.monitors"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.monitors"><code class="option">xsession.windowManager.bspwm.monitors</code></a></span></dt><dd><p>Specifies the names of desktops to create on each monitor.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -13146,7 +13526,7 @@ bspc subscribe all &gt; ~/bspc-report.log &amp;
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules"><code class="option">xsession.windowManager.bspwm.rules</code></a></span></dt><dd><p>bspc rules</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules"><code class="option">xsession.windowManager.bspwm.rules</code></a></span></dt><dd><p>Rule configuration. The keys of the attribute set are the targets of the rules.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -13278,7 +13658,7 @@ the desktop.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.settings"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.settings"><code class="option">xsession.windowManager.bspwm.settings</code></a></span></dt><dd><p>bspwm configuration</p><p><span class="emphasis"><em>Type:</em></span> attribute set of boolean or signed integer or floating point number or string or list of boolean or signed integer or floating point number or stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.settings"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.settings"><code class="option">xsession.windowManager.bspwm.settings</code></a></span></dt><dd><p>General settings given to <code class="literal">bspc config</code>.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of boolean or signed integer or floating point number or string or list of boolean or signed integer or floating point number or stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -13396,6 +13776,24 @@ See <a class="link" href="https://i3wm.org/docs/userguide.html#_colors" target="
         background = "#900000"; border = "#2f343a"; text = "#ffffff"; 
         }
     
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.bars._.colors.focusedBackground"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.bars._.colors.focusedBackground"><code class="option">xsession.windowManager.i3.config.bars.*.colors.focusedBackground</code></a></span></dt><dd><p>Background color of the bar on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#000000"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.bars._.colors.focusedSeparator"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.bars._.colors.focusedSeparator"><code class="option">xsession.windowManager.i3.config.bars.*.colors.focusedSeparator</code></a></span></dt><dd><p>Text color to be used for the separator on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#666666"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.bars._.colors.focusedStatusline"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.bars._.colors.focusedStatusline"><code class="option">xsession.windowManager.i3.config.bars.*.colors.focusedStatusline</code></a></span></dt><dd><p>Text color to be used for the statusline on the currently focused monitor output.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "#ffffff"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.bars._.colors.focusedWorkspace"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.bars._.colors.focusedWorkspace"><code class="option">xsession.windowManager.i3.config.bars.*.colors.focusedWorkspace</code></a></span></dt><dd><p>Border, background and text color for a workspace button when the workspace has focus.
@@ -13977,6 +14375,10 @@ start.
 an absolute path or <code class="literal">null</code> in which case
 <code class="filename">~/.xmonad/xmonad.hs</code> will not be managed
 by Home Manager.
+</p><p>
+If this option is set to a non-<code class="literal">null</code> value,
+recompilation of xmonad outside of Home Manager (e.g. via
+<span class="command"><strong>xmonad --recompile</strong></span>) will fail.
 </p><p><span class="emphasis"><em>Type:</em></span> null or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.writeText "xmonad.hs" ''
