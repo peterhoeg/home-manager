@@ -20,7 +20,14 @@ let
 
   settingsFile = settingsFormat.generate "glance.yml" cfg.settings;
 
+  # fail the build on an invalid config
+  validatedSettingsFile = pkgs.runCommand "glance.yml" { } ''
+    ${getExe cfg.package} -config ${settingsFile} config:validate
+    cp ${settingsFile} $out
+  '';
+
   configFilePath = "${config.xdg.configHome}/glance/glance.yml";
+
 in
 {
   meta.maintainers = [ pkgs.lib.maintainers.gepbird ];
@@ -77,7 +84,7 @@ in
     home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
     xdg.configFile."glance/glance.yml" = {
-      source = settingsFile;
+      source = validatedSettingsFile;
       onChange = mkIf (pkgs.stdenv.hostPlatform.isDarwin && cfg.package != null) ''
         domain="${config.launchd.agents.glance.domain}/$(id -u)"
         /bin/launchctl kickstart -k "$domain/org.nix-community.home.glance" \
