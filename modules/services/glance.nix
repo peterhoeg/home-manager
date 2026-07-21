@@ -81,18 +81,18 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
+    home.packages = [ cfg.package ];
 
     xdg.configFile."glance/glance.yml" = {
       source = validatedSettingsFile;
-      onChange = mkIf (pkgs.stdenv.hostPlatform.isDarwin && cfg.package != null) ''
+      onChange = mkIf pkgs.stdenv.hostPlatform.isDarwin ''
         domain="${config.launchd.agents.glance.domain}/$(id -u)"
         /bin/launchctl kickstart -k "$domain/org.nix-community.home.glance" \
           2>/dev/null || true
       '';
     };
 
-    launchd.agents.glance = mkIf (cfg.package != null) {
+    launchd.agents.glance = {
       enable = true;
       config = {
         ProgramArguments = [
@@ -107,7 +107,7 @@ in
       };
     };
 
-    systemd.user.services.glance = mkIf (cfg.package != null) {
+    systemd.user.services.glance = {
       Unit = {
         Description = "Glance feed dashboard server";
         PartOf = [ "graphical-session.target" ];
